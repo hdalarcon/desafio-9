@@ -1,0 +1,312 @@
+/*** 1- Agregar 10 documentos distintos a las colecciones mensajes y productos ***/ 
+/*** 2- Definir las claves de los documentos en relacion a los campos de las tablas de esa base. ***/
+
+db.mensajes.insertMany([{ email: "mail1@gmail.com", timestamp: new Date(), mensaje: "Hola 1"},
+{email: "mail2@gmail.com", timestamp: new Date(), mensaje: "Hola 2"},
+{email: "mail3@gmail.com", timestamp: new Date(), mensaje: "Hola 3"}, 
+{email: "mail4@gmail.com", timestamp: new Date(), mensaje: "Hola 4"},
+{email: "mail5@gmail.com", timestamp: new Date(), mensaje: "Hola 5"}, 
+{email: "mail6@gmail.com", timestamp: new Date(), mensaje: "Hola 6"}, 
+{email: "mail7@gmail.com", timestamp: new Date(), mensaje: "Hola 7"}, 
+{email: "mail8@gmail.com", timestamp: new Date(), mensaje: "Hola 8"}, 
+{email: "mail9@gmail.com", timestamp: new Date(), mensaje: "Hola 9"}, 
+{email: "mail10@gmail.com", timestamp: new Date(), mensaje: "Hola 10"}])
+
+
+db.productos.insertMany([{nombre: "Remera 1", precio: 150, foto: "https//imagenProducto1"},
+{nombre: "Remera 2", precio: 250, foto: "https//imagenProducto2"},
+{nombre: "Bermuda 1", precio: 575, foto: "https//imagenProducto3"},
+{nombre: "Bermuda 2", precio: 600, foto: "https//imagenProducto4"},
+{nombre: "Campera 1", precio: 1150, foto: "https//imagenProducto5"},
+{nombre: "Campera 2", precio: 2150, foto: "https//imagenProducto6"},
+{nombre: "Pantalon 1", precio: 3300, foto: "https//imagenProducto7"},
+{nombre: "Pantalon 2", precio: 3500, foto: "https//imagenProducto8"},
+{nombre: "Jean 1", precio: 4250, foto: "https//imagenProducto9"},
+{nombre: "Jean 2", precio: 5000, foto: "https//imagenProducto10"}])
+
+
+/*** 3- Listar los docuentos de cada coleccion ***/
+ecommerce> db.mensajes.find()
+[
+  {
+    _id: ObjectId("636310239aa3cdd4ffc564fe"),
+    email: 'mail1@gmail.com',
+    timestamp: ISODate("2022-11-03T00:49:39.628Z"),
+    mensaje: 'Hola 1'
+  },
+  {
+    _id: ObjectId("636310239aa3cdd4ffc564ff"),
+    email: 'mail2@gmail.com',
+    timestamp: ISODate("2022-11-03T00:49:39.628Z"),
+    mensaje: 'Hola 2'
+  },
+  {
+    _id: ObjectId("636310239aa3cdd4ffc56500"),
+    email: 'mail3@gmail.com',
+    timestamp: ISODate("2022-11-03T00:49:39.628Z"),
+    mensaje: 'Hola 3'
+  },
+  {
+    _id: ObjectId("636310239aa3cdd4ffc56501"),
+    email: 'mail4@gmail.com',
+    timestamp: ISODate("2022-11-03T00:49:39.628Z"),
+    mensaje: 'Hola 4'
+  },
+  {
+    _id: ObjectId("636310239aa3cdd4ffc56502"),
+    email: 'mail5@gmail.com',
+    timestamp: ISODate("2022-11-03T00:49:39.628Z"),
+    mensaje: 'Hola 5'
+  },
+  {
+    _id: ObjectId("636310239aa3cdd4ffc56503"),
+    email: 'mail6@gmail.com',
+    timestamp: ISODate("2022-11-03T00:49:39.628Z"),
+    mensaje: 'Hola 6'
+  },
+  {
+    _id: ObjectId("636310239aa3cdd4ffc56504"),
+    email: 'mail7@gmail.com',
+    timestamp: ISODate("2022-11-03T00:49:39.628Z"),
+    mensaje: 'Hola 7'
+  },
+  {
+    _id: ObjectId("636310239aa3cdd4ffc56505"),
+    email: 'mail8@gmail.com',
+    timestamp: ISODate("2022-11-03T00:49:39.628Z"),
+    mensaje: 'Hola 8'
+  },
+  {
+    _id: ObjectId("636310239aa3cdd4ffc56506"),
+    email: 'mail9@gmail.com',
+    timestamp: ISODate("2022-11-03T00:49:39.628Z"),
+    mensaje: 'Hola 9'
+  },
+  {
+    _id: ObjectId("636310239aa3cdd4ffc56507"),
+    email: 'mail10@gmail.com',
+    timestamp: ISODate("2022-11-03T00:49:39.628Z"),
+    mensaje: 'Hola 10'
+  }
+]
+
+ecommerce> db.productos.find()
+[
+  {
+    _id: ObjectId("63646f864154e882caa6939c"),
+    nombre: 'Remera 1',
+    precio: 150,
+    foto: 'https//imagenProducto1'
+  },
+  {
+    _id: ObjectId("63646f864154e882caa6939d"),
+    nombre: 'Remera 2',
+    precio: 250,
+    foto: 'https//imagenProducto2'
+  },
+  {
+    _id: ObjectId("63646f864154e882caa6939e"),
+    nombre: 'Bermuda 1',
+    precio: 575,
+    foto: 'https//imagenProducto3'
+  },
+  {
+    _id: ObjectId("63646f864154e882caa6939f"),
+    nombre: 'Bermuda 2',
+    precio: 600,
+    foto: 'https//imagenProducto4'
+  },
+  {
+    _id: ObjectId("63646f864154e882caa693a0"),
+    nombre: 'Campera 1',
+    precio: 1150,
+    foto: 'https//imagenProducto5'
+  },
+  {
+    _id: ObjectId("63646f864154e882caa693a1"),
+    nombre: 'Campera 2',
+    precio: 2150,
+    foto: 'https//imagenProducto6'
+  },
+  {
+    _id: ObjectId("63646f864154e882caa693a2"),
+    nombre: 'Pantalon 1',
+    precio: 3300,
+    foto: 'https//imagenProducto7'
+  },
+  {
+    _id: ObjectId("63646f864154e882caa693a3"),
+    nombre: 'Pantalon 2',
+    precio: 3500,
+    foto: 'https//imagenProducto8'
+  },
+  {
+    _id: ObjectId("63646f864154e882caa693a4"),
+    nombre: 'Jean 1',
+    precio: 4250,
+    foto: 'https//imagenProducto9'
+  },
+  {
+    _id: ObjectId("63646f864154e882caa693a5"),
+    nombre: 'Jean 2',
+    precio: 5000,
+    foto: 'https//imagenProducto10'
+  },
+  {
+    _id: ObjectId("636470084154e882caa693a6"),
+    nombre: 'Jean 3',
+    precio: 4900,
+    foto: 'https//imagenProducto11'
+  }
+]
+
+/*** 4- Mostrar la cantidad de documentos almacenados en cada colección ***/
+ecommerce> db.mensajes.estimatedDocumentCount();
+10
+
+ecommerce> db.productos.estimatedDocumentCount();
+10
+
+
+/*** 5- a ***/
+ecommerce> db.productos.insertOne({nombre: "Jean 3", precio: 4900, foto: "https//imagenProducto11"});
+{
+  acknowledged: true,
+  insertedId: ObjectId("636470084154e882caa693a6")
+}
+
+/*** 5- b ***/
+ecommerce> db.productos.find({nombre: "Pantalon 2"})
+[ insertedId: ObjectId("636470084154e882caa693a6")
+  {
+    _id: ObjectId("63646f864154e882caa693a3"),
+    nombre: 'Pantalon 2',
+    precio: 3500,
+    foto: 'https//imagenProducto8'
+  }
+]
+
+/*** 5- b - I ***/
+ecommerce> db.productos.find({precio: {$lt: 1000}});
+[
+  {
+    _id: ObjectId("6363128e9aa3cdd4ffc56508"),
+    nombre: 'Remera 1',
+    precio: 150,
+    foto: 'https//imagenProducto1'
+  },
+  {
+    _id: ObjectId("6363128e9aa3cdd4ffc56509"),
+    nombre: 'Remera 2',
+    precio: 250,
+    foto: 'https//imagenProducto2'
+  },
+  {
+    _id: ObjectId("6363128e9aa3cdd4ffc5650a"),
+    nombre: 'Bermuda 1',
+    precio: 575,
+    foto: 'https//imagenProducto3'
+  },
+  {
+    _id: ObjectId("6363128e9aa3cdd4ffc5650b"),
+    nombre: 'Bermuda 2',
+    precio: 600,
+    foto: 'https//imagenProducto4'
+  }
+]
+
+/*** 5- b - II ***/
+ecommerce> db.productos.find({$and:[{precio: {$gte: 1000}},{precio: {$lte: 3000}}]});
+[
+  {
+    _id: ObjectId("6363128e9aa3cdd4ffc5650c"),
+    nombre: 'Campera 1',
+    precio: 1150,
+    foto: 'https//imagenProducto5'
+  },
+  {
+    _id: ObjectId("6363128e9aa3cdd4ffc5650d"),
+    nombre: 'Campera 2',
+    precio: 2150,
+    foto: 'https//imagenProducto6'
+  }
+]
+
+/*** 5- b - III ***/
+ecommerce> db.productos.find({precio: {$gt: 3000}});
+[
+  {
+    _id: ObjectId("6363128e9aa3cdd4ffc5650e"),
+    nombre: 'Pantalon 1',
+    precio: 3300,
+    foto: 'https//imagenProducto7'
+  },
+  {
+    _id: ObjectId("6363128e9aa3cdd4ffc5650f"),
+    nombre: 'Pantalon 2',
+    precio: 3500,
+    foto: 'https//imagenProducto8'
+  },
+  {
+    _id: ObjectId("6363128e9aa3cdd4ffc56510"),
+    nombre: 'Jean 1',
+    precio: 4250,
+    foto: 'https//imagenProducto9'
+  },
+  {
+    _id: ObjectId("6363128e9aa3cdd4ffc56511"),
+    nombre: 'Jean 2',
+    precio: 5000,
+    foto: 'https//imagenProducto10'
+  },
+  {
+    _id: ObjectId("63632c1e9aa3cdd4ffc56513"),
+    nombre: 'Jean 3',
+    precio: 4900,
+    foto: 'https//imagenProducto11'
+  }
+]
+
+/*** 5- b - IV ***/
+ecommerce> db.productos.find({},{nombre: 1,_id: 0}).skip(2).limit(1).sort({precio: 1})
+[ { nombre: 'Bermuda 1' } ]
+
+/*** 5- c ***/
+ecommerce> db.productos.updateMany({}, { $set: {stock: 100} }, { upsert: true})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 11,
+  modifiedCount: 11,
+  upsertedCount: 0
+}
+
+/*** 5- d ***/
+ecommerce> db.productos.updateMany({precio: {$gt: 4000}}, { $set: {stock: 0} })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 3,
+  modifiedCount: 3,
+  upsertedCount: 0
+}
+
+/*** 5- e ***/
+ecommerce> db.productos.deleteMany({precio: {$lt: 1000}})
+{ acknowledged: true, deletedCount: 4 }
+
+/*** 6 ***/
+
+db.createUser({user: "pepe", pwd: "asd456", roles: [{role: "read", db: "ecommerce"}]})
+
+ecommerce> show users
+[
+  {
+    _id: 'ecommerce.pepe',
+    userId: new UUID("ef49afee-f30e-42cd-9626-16b8549451fe"),
+    user: 'pepe',
+    db: 'ecommerce',
+    roles: [ { role: 'read', db: 'ecommerce' } ],
+    mechanisms: [ 'SCRAM-SHA-1', 'SCRAM-SHA-256' ]
+  }
+]
