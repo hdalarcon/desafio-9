@@ -310,3 +310,8 @@ ecommerce> show users
     mechanisms: [ 'SCRAM-SHA-1', 'SCRAM-SHA-256' ]
   }
 ]
+
+mongosh -u "pepe" -p "asd456"
+
+ecommerce> db.productos.insertOne({nombre: "Jean 12", precio: 6000, foto: "https//imagenProducto12"});
+MongoServerError: not authorized on ecommerce to execute command { insert: "productos", documents: [ { nombre: "Jean 12", precio: 6000, foto: "https//imagenProducto12", _id: ObjectId('63647f733d3495bdf6553caa') } ], ordered: true, lsid: { id: UUID("0d9f0725-684a-4a89-b184-e6667fdfd269") }, $db: "ecommerce" }
